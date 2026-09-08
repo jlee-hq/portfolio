@@ -1,0 +1,336 @@
+/* ---------------------------------------------------------
+   Joe Lee — resume site
+   Palette: warm paper, near-black ink, one signal-red accent
+--------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --paper: #F1EFE8;
+  --paper-raised: #E9E6DC;
+  --ink: #1A1A18;
+  --ink-soft: #63615A;
+  --ink-faint: #93908A;
+  --line: #D7D3C6;
+  --accent: #B8362F;
+  --accent-tint: #EADAD5;
+  --max: 720px;
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *{ animation: none !important; transition: none !important; }
+}
+
+a{ color: inherit; }
+a:focus-visible, button:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- header / nav ---------- */
+
+header.site{
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0;
+}
+
+header.site .wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+}
+
+.wordmark{
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+nav.primary{
+  display: flex;
+  gap: 22px;
+}
+
+nav.primary a{
+  text-decoration: none;
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+nav.primary a:hover{
+  color: var(--ink);
+}
+
+nav.primary a[aria-current="page"]{
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- hero ---------- */
+
+.hero{
+  padding: 64px 0 40px;
+}
+
+.hero h1{
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  line-height: 1.08;
+  margin: 0 0 14px;
+  letter-spacing: -0.015em;
+}
+
+.hero .role-line{
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  margin: 0 0 22px;
+}
+
+.hero .role-line strong{
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.hero p.lede{
+  max-width: 58ch;
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+}
+
+.hero .actions{
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  display: inline-block;
+  padding: 10px 18px;
+  text-decoration: none;
+  font-size: 0.92rem;
+  border-radius: 3px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover{ background: var(--ink); color: var(--paper); }
+
+.btn.primary{
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn.primary:hover{
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- section shell ---------- */
+
+section.block{
+  padding: 44px 0;
+  border-top: 1px solid var(--line);
+}
+
+section.block > .wrap > h2{
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin: 0 0 28px;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- experience timeline ---------- */
+
+.employer{
+  margin-bottom: 40px;
+}
+
+.employer:last-child{ margin-bottom: 0; }
+
+.employer-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.employer-head h3{
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.employer-head .place{
+  font-size: 0.88rem;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.role{
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 4px 20px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.employer .role:first-of-type{
+  border-top: none;
+  padding-top: 10px;
+}
+
+.role-date{
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  padding-top: 3px;
+}
+
+.role-title{
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.role ul{
+  margin: 0;
+  padding-left: 18px;
+}
+
+.role li{
+  margin-bottom: 8px;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+}
+
+.role li:last-child{ margin-bottom: 0; }
+
+.role li::marker{
+  color: var(--accent);
+}
+
+@media (max-width: 560px){
+  .role{ grid-template-columns: 1fr; gap: 2px; }
+  .role-date{ padding-top: 0; }
+}
+
+/* ---------- education ---------- */
+
+.edu-item{
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 4px 20px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.edu-item:first-child{ border-top: none; padding-top: 0; }
+
+.edu-item .role-date{ padding-top: 3px; }
+
+.edu-item h3{
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  font-size: 1.02rem;
+  margin: 0 0 4px;
+}
+
+.edu-item p{ margin: 0 0 6px; color: var(--ink-soft); font-size: 0.95rem; }
+.edu-item ul{ margin: 6px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: 0.92rem; }
+.edu-item li::marker{ color: var(--accent); }
+
+@media (max-width: 560px){
+  .edu-item{ grid-template-columns: 1fr; }
+}
+
+/* ---------- tags / skills ---------- */
+
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.tag{
+  font-size: 0.86rem;
+  padding: 6px 13px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--ink-soft);
+  background: var(--paper-raised);
+}
+
+/* ---------- about / two-col ---------- */
+
+.about-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+.about-grid p{ color: var(--ink-soft); max-width: 62ch; }
+
+.pill-note{
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+}
+
+/* ---------- contact ---------- */
+
+.contact-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-list a{
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+}
+
+.contact-list a:hover{ border-bottom-color: var(--accent); }
+
+/* ---------- footer ---------- */
+
+footer.site{
+  padding: 40px 0 60px;
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+}
