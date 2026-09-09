@@ -10,7 +10,7 @@
   --paper-raised: #E9E6DC;
   --ink: #1A1A18;
   --ink-soft: #63615A;
-  --ink-faint: #93908A;
+  --ink-faint: #6B6862;
   --line: #D7D3C6;
   --accent: #B8362F;
   --accent-tint: #EADAD5;
@@ -122,7 +122,7 @@ nav.primary a[aria-current="page"]{
 
 .hero p.lede{
   max-width: 58ch;
-  font-size: 1.02rem;
+  font-size: 1.1rem;
   color: var(--ink-soft);
 }
 
@@ -202,7 +202,7 @@ section.block > .wrap > h2{
 
 .role{
   display: grid;
-  grid-template-columns: 132px 1fr;
+  grid-template-columns: 160px 1fr;
   gap: 4px 20px;
   padding: 16px 0;
   border-top: 1px solid var(--line);
@@ -217,6 +217,7 @@ section.block > .wrap > h2{
   font-size: 0.85rem;
   color: var(--ink-faint);
   padding-top: 3px;
+  white-space: nowrap;
 }
 
 .role-title{
@@ -225,21 +226,10 @@ section.block > .wrap > h2{
   font-weight: 600;
 }
 
-.role ul{
+.role-note{
   margin: 0;
-  padding-left: 18px;
-}
-
-.role li{
-  margin-bottom: 8px;
   color: var(--ink-soft);
   font-size: 0.96rem;
-}
-
-.role li:last-child{ margin-bottom: 0; }
-
-.role li::marker{
-  color: var(--accent);
 }
 
 @media (max-width: 560px){
@@ -251,7 +241,7 @@ section.block > .wrap > h2{
 
 .edu-item{
   display: grid;
-  grid-template-columns: 132px 1fr;
+  grid-template-columns: 160px 1fr;
   gap: 4px 20px;
   padding: 16px 0;
   border-top: 1px solid var(--line);
