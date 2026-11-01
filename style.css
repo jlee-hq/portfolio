@@ -324,3 +324,18 @@ footer.site{
   color: var(--ink-faint);
   font-size: 0.85rem;
 }
+
+/* ---------- focus list ---------- */
+.focus-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 60ch;
+  color: var(--ink-soft);
+}
+.focus-list li{
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+.focus-list li:first-child{ border-top: none; padding-top: 0; }
+.focus-list strong{ color: var(--ink); font-weight: 600; }
