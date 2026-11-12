@@ -1,20 +1,22 @@
 /* ---------------------------------------------------------
    Joe Lee — resume site
-   Palette: warm paper, near-black ink, one signal-red accent
+   Theme: Console. Dark navy, off-white ink, VALORANT red accent
 --------------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root{
-  --paper: #F1EFE8;
-  --paper-raised: #E9E6DC;
-  --ink: #1A1A18;
-  --ink-soft: #63615A;
-  --ink-faint: #6B6862;
-  --line: #D7D3C6;
-  --accent: #B8362F;
-  --accent-tint: #EADAD5;
-  --max: 720px;
+  --bg: #0F1923;
+  --bg-raised: #16222E;
+  --ink: #ECE8E1;
+  --ink-soft: #C4C6C2;
+  --ink-faint: #A3ABB2;
+  --line: #2C3B4A;
+  --accent: #FF4655;
+  --max: 880px;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --display: 'Space Grotesk', 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
 }
 
 *{ box-sizing: border-box; }
@@ -23,9 +25,9 @@ html{ scroll-behavior: smooth; }
 
 body{
   margin: 0;
-  background: var(--paper);
+  background: var(--bg);
   color: var(--ink);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--sans);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -35,6 +37,8 @@ body{
   html{ scroll-behavior: auto; }
   *{ animation: none !important; transition: none !important; }
 }
+
+::selection{ background: var(--accent); color: var(--bg); }
 
 a{ color: inherit; }
 a:focus-visible, button:focus-visible{
@@ -51,130 +55,163 @@ a:focus-visible, button:focus-visible{
 /* ---------- header / nav ---------- */
 
 header.site{
-  border-bottom: 1px solid var(--line);
-  padding: 28px 0;
+  padding: 24px 0;
 }
 
 header.site .wrap{
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 10px 28px;
+  gap: 14px 28px;
 }
 
 .wordmark{
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 600;
-  font-size: 1.15rem;
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.85rem;
   text-decoration: none;
-  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wordmark::before{
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
 }
 
 nav.primary{
   display: flex;
-  gap: 22px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 nav.primary a{
   text-decoration: none;
-  font-size: 0.94rem;
-  color: var(--ink-soft);
-  padding-bottom: 2px;
-  border-bottom: 1px solid transparent;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  padding: 8px 14px;
+  border: 1px solid var(--line);
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 nav.primary a:hover{
   color: var(--ink);
+  border-color: var(--ink-faint);
 }
 
 nav.primary a[aria-current="page"]{
-  color: var(--ink);
-  border-bottom-color: var(--accent);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* ---------- hero ---------- */
 
 .hero{
-  padding: 64px 0 40px;
+  padding: 88px 0 56px;
 }
 
 .hero h1{
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 600;
-  font-size: clamp(2.1rem, 5vw, 3rem);
-  line-height: 1.08;
-  margin: 0 0 14px;
-  letter-spacing: -0.015em;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(3.2rem, 10vw, 7rem);
+  line-height: 0.92;
+  margin: 0 0 22px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
 }
 
 .hero .role-line{
-  font-size: 1.1rem;
-  color: var(--ink-soft);
-  margin: 0 0 22px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin: 0 0 24px;
 }
 
+.hero .role-line::before{ content: "> "; }
+
 .hero .role-line strong{
-  color: var(--ink);
+  color: var(--accent);
   font-weight: 500;
 }
 
 .hero p.lede{
-  max-width: 58ch;
-  font-size: 1.1rem;
+  max-width: 62ch;
+  font-size: 1.06rem;
   color: var(--ink-soft);
 }
 
 .hero .actions{
   display: flex;
-  gap: 14px;
-  margin-top: 28px;
+  gap: 12px;
+  margin-top: 32px;
   flex-wrap: wrap;
 }
 
 .btn{
   display: inline-block;
-  padding: 10px 18px;
+  padding: 14px 22px;
   text-decoration: none;
-  font-size: 0.92rem;
-  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   border: 1px solid var(--ink);
   color: var(--ink);
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-.btn:hover{ background: var(--ink); color: var(--paper); }
+.btn:hover{ background: var(--ink); color: var(--bg); }
 
 .btn.primary{
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.btn.primary:hover{
   background: var(--accent);
   border-color: var(--accent);
+  color: var(--bg);
+}
+
+.btn.primary::after{ content: " \2192"; }
+
+.btn.primary:hover{
+  background: var(--ink);
+  border-color: var(--ink);
 }
 
 /* ---------- section shell ---------- */
 
 section.block{
   padding: 44px 0;
-  border-top: 1px solid var(--line);
 }
 
 section.block > .wrap > h2{
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 600;
-  font-size: 1.4rem;
-  margin: 0 0 28px;
-  letter-spacing: -0.01em;
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  margin: 0 0 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
 }
 
 /* ---------- experience timeline ---------- */
 
 .employer{
-  margin-bottom: 40px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  padding: 24px 28px;
+  margin-bottom: 16px;
 }
 
 .employer:last-child{ margin-bottom: 0; }
@@ -183,56 +220,61 @@ section.block > .wrap > h2{
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 12px;
-  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-bottom: 10px;
 }
 
 .employer-head h3{
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 600;
-  font-size: 1.15rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
   margin: 0;
 }
 
 .employer-head .place{
-  font-size: 0.88rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--ink-faint);
   white-space: nowrap;
 }
 
 .role{
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 170px 1fr;
   gap: 4px 20px;
-  padding: 16px 0;
-  border-top: 1px solid var(--line);
+  padding: 4px 0 4px 18px;
+  margin-top: 16px;
+  border-left: 2px solid var(--accent);
 }
 
-.employer .role:first-of-type{
-  border-top: none;
-  padding-top: 10px;
-}
+.employer .role:first-of-type{ margin-top: 6px; }
 
 .role-date{
-  font-size: 0.85rem;
-  color: var(--ink-faint);
-  padding-top: 3px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  padding-top: 4px;
   white-space: nowrap;
 }
 
 .role-title{
-  margin: 0 0 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+  font-weight: 500;
 }
 
 .role-note{
   margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.96rem;
+  color: var(--ink-faint);
+  font-size: 0.94rem;
 }
 
-@media (max-width: 560px){
+@media (max-width: 600px){
+  .employer{ padding: 20px; }
   .role{ grid-template-columns: 1fr; gap: 2px; }
   .role-date{ padding-top: 0; }
 }
@@ -241,29 +283,31 @@ section.block > .wrap > h2{
 
 .edu-item{
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 170px 1fr;
   gap: 4px 20px;
-  padding: 16px 0;
-  border-top: 1px solid var(--line);
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
 }
 
-.edu-item:first-child{ border-top: none; padding-top: 0; }
+.edu-item:last-child{ margin-bottom: 0; }
 
-.edu-item .role-date{ padding-top: 3px; }
+.edu-item .role-date{ padding-top: 6px; }
 
 .edu-item h3{
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 600;
-  font-size: 1.02rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.25rem;
   margin: 0 0 4px;
 }
 
 .edu-item p{ margin: 0 0 6px; color: var(--ink-soft); font-size: 0.95rem; }
-.edu-item ul{ margin: 6px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: 0.92rem; }
+.edu-item ul{ margin: 6px 0 0; padding-left: 18px; color: var(--ink-faint); font-size: 0.92rem; }
 .edu-item li::marker{ color: var(--accent); }
 
-@media (max-width: 560px){
-  .edu-item{ grid-template-columns: 1fr; }
+@media (max-width: 600px){
+  .edu-item{ grid-template-columns: 1fr; padding: 20px; }
 }
 
 /* ---------- tags / skills ---------- */
@@ -275,12 +319,14 @@ section.block > .wrap > h2{
 }
 
 .tag{
-  font-size: 0.86rem;
-  padding: 6px 13px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 8px 13px;
   border: 1px solid var(--line);
-  border-radius: 3px;
   color: var(--ink-soft);
-  background: var(--paper-raised);
+  background: var(--bg-raised);
 }
 
 /* ---------- about / two-col ---------- */
@@ -288,13 +334,16 @@ section.block > .wrap > h2{
 .about-grid{
   display: grid;
   grid-template-columns: 1fr;
-  gap: 36px;
+  gap: 28px;
 }
 
-.about-grid p{ color: var(--ink-soft); max-width: 62ch; }
+.about-grid p{ color: var(--ink-soft); max-width: 64ch; margin: 0; }
 
 .pill-note{
-  font-size: 0.9rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--ink-faint);
 }
 
@@ -315,27 +364,59 @@ section.block > .wrap > h2{
   padding-bottom: 1px;
 }
 
-.contact-list a:hover{ border-bottom-color: var(--accent); }
+.contact-list a:hover{ border-bottom-color: var(--accent); color: var(--accent); }
 
 /* ---------- footer ---------- */
 
 footer.site{
-  padding: 40px 0 60px;
+  margin-top: 40px;
+  padding: 28px 0 56px;
+  border-top: 1px solid var(--line);
   color: var(--ink-faint);
-  font-size: 0.85rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
+footer.site a:hover{ color: var(--accent); }
+
 /* ---------- focus list ---------- */
+
 .focus-list{
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 60ch;
-  color: var(--ink-soft);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  counter-reset: focus;
+  color: var(--ink-faint);
+  font-size: 0.94rem;
 }
+
 .focus-list li{
-  padding: 10px 0;
-  border-top: 1px solid var(--line);
+  counter-increment: focus;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  padding: 22px 24px;
 }
-.focus-list li:first-child{ border-top: none; padding-top: 0; }
-.focus-list strong{ color: var(--ink); font-weight: 600; }
+
+.focus-list li::before{
+  content: "[0" counter(focus) "]";
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.focus-list strong{
+  display: block;
+  color: var(--ink);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
