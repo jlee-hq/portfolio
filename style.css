@@ -214,8 +214,8 @@ section.block > .wrap > h2{
 }
 
 .logo{
-  width: 56px;
-  height: 32px;
+  width: 40px;
+  height: 26px;
   flex: none;
   object-fit: contain;
   object-position: center;
