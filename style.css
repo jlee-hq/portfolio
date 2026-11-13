@@ -227,7 +227,7 @@ section.block > .wrap > h2{
   height: 24px;
   flex: none;
   object-fit: contain;
-  object-position: center;
+  object-position: left center;
 }
 
 .employer{
