@@ -222,6 +222,11 @@ section.block > .wrap > h2{
   background: #FFFFFF;
 }
 
+.logo.bare{
+  background: transparent;
+  border-radius: 0;
+}
+
 .logo.wide{
   width: auto;
   height: 1.1em;
