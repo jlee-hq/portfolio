@@ -210,12 +210,21 @@ section.block > .wrap > h2{
 .with-logo{
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+}
+
+/* logo hangs into the card padding so the name lines up with the dates (2px rule + 18px padding = 20px) */
+.with-logo .logo{
+  margin-left: -20px;
+}
+
+@media (max-width: 600px){
+  .with-logo .logo{ margin-left: 0; }
 }
 
 .logo{
-  width: 40px;
-  height: 26px;
+  width: 32px;
+  height: 24px;
   flex: none;
   object-fit: contain;
   object-position: center;
