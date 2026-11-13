@@ -210,12 +210,12 @@ section.block > .wrap > h2{
 .with-logo{
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo{
-  width: 1em;
-  height: 1em;
+  width: 1.4em;
+  height: 1.4em;
   flex: none;
   object-fit: cover;
   border-radius: 4px;
@@ -229,7 +229,11 @@ section.block > .wrap > h2{
 
 .logo.wide{
   width: auto;
-  height: 1.1em;
+  height: 1.4em;
+}
+
+.logo.wide.text{
+  height: 1em;
 }
 
 .employer{
