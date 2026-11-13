@@ -222,6 +222,11 @@ section.block > .wrap > h2{
   background: #FFFFFF;
 }
 
+.logo.wide{
+  width: auto;
+  height: 1.1em;
+}
+
 .employer{
   background: var(--bg-raised);
   border: 1px solid var(--line);
