@@ -269,9 +269,8 @@ section.block > .wrap > h2{
   display: grid;
   grid-template-columns: 170px 1fr;
   gap: 4px 20px;
-  padding: 4px 0 4px 18px;
+  padding: 4px 0 4px 20px;
   margin-top: 16px;
-  border-left: 2px solid var(--accent);
 }
 
 .employer .role:first-of-type{ margin-top: 6px; }
@@ -323,8 +322,8 @@ section.block > .wrap > h2{
   margin: 0 0 4px;
 }
 
-.edu-item p{ margin: 0 0 6px; color: var(--ink-soft); font-size: 0.95rem; }
-.edu-item ul{ margin: 6px 0 0; padding-left: 18px; color: var(--ink-faint); font-size: 0.92rem; }
+.edu-item p{ margin: 0 0 6px; padding-left: 20px; color: var(--ink-soft); font-size: 0.95rem; }
+.edu-item ul{ margin: 6px 0 0; padding-left: 20px; color: var(--ink-faint); font-size: 0.92rem; }
 .edu-item li::marker{ color: var(--accent); }
 
 @media (max-width: 600px){
